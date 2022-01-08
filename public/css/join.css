@@ -1,0 +1,154 @@
+#gameContainer {
+  background-color: white;
+  width: 50vw;
+  margin: 20px auto;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+body {
+  background-color: #4bc7f0;
+}
+table#TicTacToeBoard td {
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4bc7f0;
+  background-color: #ffffff;
+  margin: 10px !important;
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+table#TicTacToeBoard tr {
+  padding: 50px;
+}
+table#TicTacToeBoard {
+  background-color: #4bc7f0;
+  margin-top: 30px !important;
+  padding: 20px;
+}
+table#TicTacToeBoard,
+table#scoreBoard {
+  margin: 10px auto;
+}
+table#scoreBoard tr td {
+  padding: 20px 30px;
+  font-size: 20px;
+  text-align: center;
+}
+#gameContainer form {
+  width: 80%;
+  margin: 10px auto;
+}
+#gameContainer form button {
+  background-color: #4bc7f0;
+  /* margin: 50px; */
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  height: 40px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+#gameInfo {
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 21px;
+}
+#gameState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#gameState button {
+  width: 50%;
+  justify-content: center;
+  margin: 10px auto;
+  background-color: #4bc7f0;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  height: 25px;
+}
+@media screen and (max-width: 500px) {
+  #gameContainer {
+    width: 80vw;
+  }
+  table#TicTacToeBoard td {
+    width: 20px;
+    height: 20px;
+  }
+  table#TicTacToeBoard tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+  table#TicTacToeBoard {
+    margin-left: 0 !important;
+  }
+}
+
+/* join page */
+.join {
+  background-color: white;
+  padding: 20px;
+  width: 60vw;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+.join h1 {
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+.join h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.container label {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.container button,
+.container input {
+  width: 100% !important;
+  padding: 0;
+  margin: 10px auto;
+}
+.container input {
+  height: 20px;
+}
+.join button {
+  background-color: #4bc7f0;
+  color: #ffffff;
+  border: none;
+  height: 30px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px auto !important;
+}
+.join form[action="/"] {
+  width: 80%;
+  margin: 30px auto;
+}
+form[action="/"] button {
+  margin: 10px auto;
+  display: block;
+}

@@ -1,0 +1,226 @@
+#gameContainer {
+  display: none;
+}
+
+body {
+  overflow-x: hidden !important;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+/* #searchingText {
+  font-size: 150%;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  font-weight: bold;
+  text-align: center;
+} */
+.menuBtn {
+  background-color: rgb(75, 199, 240);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+}
+#searching {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+#searching {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  animation-name: loading !important;
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  background-color: #fc352b;
+}
+.box {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  margin: auto;
+  padding: 30px;
+}
+#searchState {
+  font-size: 30px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+@keyframes loading {
+  0% {
+    background-color: #fc352b;
+  }
+  12.5% {
+    background-color: #f79811;
+  }
+  25% {
+    background-color: #f7e414;
+  }
+  37.5% {
+    background-color: #67e344;
+  }
+  50% {
+    background-color: #3e5df7;
+  }
+  62.5% {
+    background-color: #4bc7f0;
+  }
+  75% {
+    background-color: #a447f5;
+  }
+  100% {
+    background-color: #f547f2;
+  }
+}
+#gameContainer {
+  background-color: white;
+  width: 50vw;
+  margin: 20px auto;
+  font-family: sans-serif;
+  padding: 20px;
+  height: max-content;
+}
+
+#gameInfo {
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 21px;
+}
+#gameState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#gameState button {
+  width: 50%;
+  justify-content: center;
+  margin: 10px auto;
+  background-color: #4bc7f0;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  height: 25px;
+}
+body {
+  background-color: #4bc7f0;
+}
+table#TicTacToeBoard td {
+  padding: 30px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4bc7f0;
+  background-color: #ffffff;
+  margin: 10px !important;
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+table#TicTacToeBoard tr {
+  padding: 50px;
+}
+table#TicTacToeBoard {
+  background-color: #4bc7f0;
+  margin-top: 30px !important;
+  padding: 20px;
+}
+table#TicTacToeBoard,
+table#scoreBoard {
+  margin: 10px auto;
+}
+table#scoreBoard tr td {
+  padding: 20px 30px;
+  font-size: 20px;
+  text-align: center;
+}
+#gameContainer form {
+  width: 80%;
+  margin: 10px auto;
+}
+#gameContainer form button {
+  background-color: #4bc7f0;
+  /* margin: 50px; */
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  height: 40px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+  #gameContainer {
+    width: 80vw;
+    height: max-content;
+  }
+  table#TicTacToeBoard td {
+    width: 20px;
+    height: 20px;
+  }
+  table#TicTacToeBoard tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+  table#TicTacToeBoard {
+    margin-left: auto !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* #gameContainer {
+    width: 87vw !important;
+  } */
+  table#TicTacToeBoard {
+    width: 400px;
+  }
+  table#TicTacToeBoard tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+  }
+  table#TicTacToeBoard td {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.versus {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  text-transform: capitalize;
+  align-items: baseline;
+}
+.versus h4 {
+  margin: 10px;
+  font-size: 35px;
+}
+.versus h4#vs {
+  font-weight: 400;
+  font-size: 30px;
+}
+@media screen and (max-width: 500px) {
+  .versus {
+    flex-direction: column;
+    align-items: center;
+  }
+}

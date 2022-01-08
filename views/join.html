@@ -1,35 +1,40 @@
 <html>
-    <head>
-        <title>Tic Tac Toe</title>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    
-		<link href="apple-icon/icon57X57.png" rel="apple-touch-icon" />
-		<link href="apple-icon/icon76X76.png" rel="apple-touch-icon" sizes="76x76" />
-		<link href="apple-icon/icon120X120.png" rel="apple-touch-icon" sizes="120x120" />
-		<link href="apple-icon/icon152X152.png" rel="apple-touch-icon" sizes="152x152" />
-		<link href="apple-icon/icon180X180.png" rel="apple-touch-icon" sizes="180x180" />
-		<link href="android-icon/icon192X192.png" rel="icon" sizes="192x192" />
-		<link href="android-icon/icon192X192.png" rel="icon" sizes="128x128" />
-    </head>
-    <body>
-		<div id = "title">Tic Tac Toe</div>
-		<div id = "subtitle">Multiplayer Edition</div>
-		<div class = "divider"></div>
-		<div class = "container">
-			<form action = "/game">
-				<label id = "enterCodeLabel">Enter Room Code:</label><input type = "tel" id = "gameCodeInput" class = "form-control" name = "gameCode">
-				<button class = "startChoiceBtn btn btn-info" type = "submit">Join Game</button>
-			</form>
-		</div>
-		<form action = "/">
-			<button class = "menuBtn loadingMenuBtn btn btn-info" type = "submit">
-				Menu
-			</button>
-		</form>
-    </body>
+  <head>
+    <title>Tic Tac Toe</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/join.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+
+    <link href="apple-icon/icon57X57.png" rel="apple-touch-icon" />
+    <link href="apple-icon/icon76X76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="apple-icon/icon120X120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="apple-icon/icon152X152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="apple-icon/icon180X180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="android-icon/icon192X192.png" rel="icon" sizes="192x192" />
+    <link href="android-icon/icon192X192.png" rel="icon" sizes="128x128" />
+  </head>
+  <body>
+    <div class="join">
+      <h1 id="title">Tic Tac Toe</h1>
+      <h2 id="subtitle">Versi Multiplayer</h2>
+
+      <div class="container">
+        <form action="/game">
+          <label id="enterCodeLabel">Masukkan Room Code:</label>
+          <input type="hidden" name="nama" id="mynama" />
+          <input type="tel" id="gameCodeInput" class="form-control" name="gameCode" />
+          <button class="startChoiceBtn btn btn-info" type="submit">Gabung permainan</button>
+        </form>
+      </div>
+      <form action="/">
+        <button class="menuBtn loadingMenuBtn btn btn-info" type="submit">Beranda</button>
+      </form>
+    </div>
+    <script>
+      document.body.onload = () => (document.getElementById("mynama").value = localStorage.getItem("nama"));
+    </script>
+  </body>
 </html>

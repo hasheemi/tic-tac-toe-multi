@@ -1,209 +1,82 @@
-form{
-	margin: 0px;
-	padding: 0px;
+body {
+  background-color: rgb(75, 199, 240);
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+  border: none;
+  overflow-x: hidden;
+  display: flex;
+}
+.welcome {
+  background-color: white;
+  width: 60vw;
+  margin: auto;
 }
 
-table {
-	margin: 20px auto;
+.btn {
+  width: 200px;
 }
-
-#title{
-	text-align: center;
-	font-size: 250%;
-	color: #77aaff;
-	font-weight: 900;
+#title {
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  font-weight: 600;
 }
-
-#subtitle{
-	font-size: 150%;
-	margin: none;
-	padding: none;
-	text-align: center;
-	color: #ff77aa;
-	font-weight: 900;
+#subtitle {
+  text-align: center;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 20px;
 }
-
-#gameInfo{
-	margin: 20px;
-	text-align: center;
-	font-size: 150%;
+.container {
+  margin: 10px auto;
+  width: 80%;
 }
-
-.box{
-	font-size: 15vh;
-	font-weight: bold;
-	text-align: center;
-	width: 18vh;
-	height: 18vh;
+.container form {
+  width: 80%;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-#gameState{
-	font-weight: bold;
+.container .btn {
+  margin: 5px auto;
+  text-align: center;
+  width: 300px;
 }
-
-.yourTurn{
-	font-weight: bold;
+.btn button {
+  background-color: #4bc7f0;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 8px;
 }
-
-.notYourTurn{
-	opacity: .4
+.btn i {
+  margin-right: 10px;
 }
-
-.playerX{
-	color: #ff77aa;
+@media screen and (max-width: 500px) {
+  .btn {
+    width: 100% !important;
+  }
+  button {
+    padding: 20px;
+  }
+  form {
+    justify-content: flex-start;
+  }
+  .welcome {
+    width: 80vw;
+  }
 }
-
-#XTag{
-	color: #ff77aa;
-	font-weight: bold;
+.namainp {
+  width: 300px;
+  margin: 10px auto;
 }
-
-#tieTag{
-	font-weight: bold;
-}
-
-#OTag{
-	color: #77aaff;
-	font-weight: bold;
-}
-
-.playerO{
-	color: #77aaff;
-}
-
-#scoreTitle{
-	text-align: center;
-}
-
-.score{
-	margin: 20px;
-	text-align: center;
-	font-size: 150%;
-	height: 5vh;
-	width: 18vh;
-}
-
-.startChoiceBtn{
-	display: block;
-	margin: auto;
-	width: 100%;
-	max-width: 400px;
-	height: 75px;
-	font-size: 200% !important;
-	background-color: #77aaff;
-}
-
-.menuBtn{
-	display: block;
-	margin: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	font-weight: bold;
-	background-color: #ff77aa !important;
-	font-size: 150% !important;
-	border: #e56b99 !important;	
-}
-
-.menuBtn:hover{
-	background-color: #e56b99 !important;
-}
-
-.menuBtn:active{
-	background-color: #e56b99 !important;
-}
-
-.menuBtn:visited{
-	background-color: #e56b99 !important;
-}
-
-.actionBtn{
-	display: block;
-	margin: auto;
-	width: 40vh;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	background-color: #77aaff;
-	font-size: 100% !important;
-	outline: none !important;
-}
-
-#scoreBoard{
-	margin-top: 20px;
-}
-
-.panel{
-	display: block;
-	margin: auto;
-	width: 100%;
-	max-width: 400px;
-}
-
-form{
-	margin: none;
-	padding: none;
-}
-
-.gameDesc{
-	position: relative;
-	text-align: center;
-	font-size: 150%;
-	font-weight: bold;
-}
-
-.divider{
-	height: 60px;
-}
-
-#enterCodeLabel{
-	display: block;
-	text-align: center;
-	font-size: 200%;
-}
-
-#gameCodeInput{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	font-size: 150%;
-	height: auto;
-	width: 100%;
-	text-align: center;
-}
-
-.startScreenX{
-	font-size: 150%;
-}
-
-#loadingContainer{
-	top: 0%;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-}
-
-#searchingText{
-	font-size: 150%;
-	width: 100%;
-	position: absolute;
-	top: 20%;
-	font-weight: bold;
-	text-align: center;
-}
-
-.menuBtnContainer{
-	position: absolute;
-	top: 80%;
-	width: 100%;
-}
-
-.loadingMenuBtn{
-	
-}
-
-#searchState{
-	display: inline;
-}
-
-#gameContainer{
-	display: none;
+.namainp button {
+  background-color: #4bc7f0;
+  border: none;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 10px;
 }
