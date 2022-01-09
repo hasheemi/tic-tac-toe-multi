@@ -159,6 +159,10 @@ table#scoreBoard tr td {
   color: white;
   border-radius: 10px;
 }
+#roomId {
+  font-family: sans-serif;
+  font-size: 20px;
+}
 @media screen and (max-width: 767px) {
   #gameContainer {
     width: 80vw;

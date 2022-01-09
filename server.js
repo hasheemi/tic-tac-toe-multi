@@ -4,16 +4,18 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
 var http = require("http").Server(app);
-var io = require("socket.io")(http);
-var Local = require("node-localstorage").LocalStorage;
-var Storage = new Local("./scratch");
+var io = require("socket.io")(http, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
 let namaPemain = "";
 let namaArr = [];
-Storage.setItem("nama", "hash");
 
 io.set("heartbeat interval", 1000);
 io.set("heartbeat timeout", 5000);
-console.log(Storage.getItem("nama"));
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   bodyParser.urlencoded({
@@ -24,20 +26,16 @@ app.use(bodyParser.json());
 
 var tipeGame; // dapatkan tipe game, random , private atau code
 function getTipeGame(query) {
-  // for (key in query) {
-  //   tipeGame = key.toString();
-  //   console.log(tipeGame);
-  // }
   let key = Object.keys(query);
   tipeGame = key[1];
 }
 
 // benampilkan view
-app.get("/join", function (req, res) {
+app.get("/tic-tac-toe-multi/join", function (req, res) {
   res.sendFile(__dirname + "/views/join.html");
 });
 
-app.get("/game", function (req, res) {
+app.get("/tic-tac-toe-multi/game", function (req, res) {
   gameQuery = req.query;
   namaPemain = req.query.nama;
   getTipeGame(gameQuery);
@@ -45,10 +43,16 @@ app.get("/game", function (req, res) {
   res.sendFile(__dirname + "/views/game.html");
 });
 
-app.get("/", function (req, res) {
+app.get("/tic-tac-toe-multi/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+//buat yang lihat ini , ini hanya akalan karena hosting nya pusing
+app.get("/tic-tac-toe-multi/media/:folder/:file", (req, res) => {
+  let folder = req.params.folder;
+  let file = req.params.file;
+  res.sendFile(__dirname + `/public/${folder}/${file}`);
+});
 function RandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -118,12 +122,10 @@ function cariRoom(playerId) {
       }
     }
   }
-
-  //This means the player does not have a room
   return false;
 }
 
-//This is used to switch who starts the game at every new game
+//mengacak giliran
 function acakGiliran(playerData) {
   turn = giliranMain();
 
@@ -313,6 +315,4 @@ var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 4000;
 
-http.listen(port, ipaddress, function () {
-  console.log("Running on Openshift Server");
-});
+http.listen(4000);
