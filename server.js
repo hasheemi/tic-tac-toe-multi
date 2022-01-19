@@ -31,11 +31,11 @@ function getTipeGame(query) {
 }
 
 // benampilkan view
-app.get("/tic-tac-toe-multi/join", function (req, res) {
+app.get("/join", function (req, res) {
   res.sendFile(__dirname + "/views/join.html");
 });
 
-app.get("/tic-tac-toe-multi/game", function (req, res) {
+app.get("/game", function (req, res) {
   gameQuery = req.query;
   namaPemain = req.query.nama;
   getTipeGame(gameQuery);
@@ -43,12 +43,12 @@ app.get("/tic-tac-toe-multi/game", function (req, res) {
   res.sendFile(__dirname + "/views/game.html");
 });
 
-app.get("/tic-tac-toe-multi/", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
 //buat yang lihat ini , ini hanya akalan karena hosting nya pusing
-app.get("/tic-tac-toe-multi/media/:folder/:file", (req, res) => {
+app.get("/media/:folder/:file", (req, res) => {
   let folder = req.params.folder;
   let file = req.params.file;
   res.sendFile(__dirname + `/public/${folder}/${file}`);

@@ -23,7 +23,7 @@ body {
   font-size: 20px;
   padding: 10px;
   border-radius: 8px;
-  width: 300px;
+  width: 85%;
 }
 #searching {
   display: flex;
@@ -53,6 +53,7 @@ body {
   font-size: 30px;
   font-family: sans-serif;
   text-transform: uppercase;
+  text-align: center;
 }
 @keyframes loading {
   0% {
@@ -133,7 +134,7 @@ table#TicTacToeBoard tr {
 table#TicTacToeBoard {
   background-color: #4bc7f0;
   margin-top: 30px !important;
-  padding: 20px;
+  padding: 5px;
 }
 table#TicTacToeBoard,
 table#scoreBoard {
@@ -184,12 +185,6 @@ table#scoreBoard tr td {
   }
 }
 @media screen and (min-width: 768px) {
-  /* #gameContainer {
-    width: 87vw !important;
-  } */
-  table#TicTacToeBoard {
-    width: 400px;
-  }
   table#TicTacToeBoard tr {
     display: flex;
     flex-direction: row;
@@ -226,5 +221,10 @@ table#scoreBoard tr td {
   .versus {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+  .box {
+    width: 70%;
+    height: 200px;
   }
 }

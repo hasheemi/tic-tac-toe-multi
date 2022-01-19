@@ -128,7 +128,7 @@ table#scoreBoard tr td {
 }
 .container button,
 .container input {
-  width: 100% !important;
+  width: 60%;
   padding: 0;
   margin: 10px auto;
 }
@@ -141,7 +141,7 @@ table#scoreBoard tr td {
   border: none;
   height: 30px;
   border-radius: 10px;
-  width: 100%;
+  width: 60%;
   margin: 10px auto !important;
 }
 .join form[action="/"] {
@@ -151,4 +151,10 @@ table#scoreBoard tr td {
 form[action="/"] button {
   margin: 10px auto;
   display: block;
+}
+@media screen and (max-width: 500px) {
+  .join .container input,
+  .join .container button {
+    width: 100% !important;
+  }
 }

@@ -6,11 +6,6 @@ yourTurn = null;
 canPlay = false;
 let playeran = [];
 
-//////////////////////////////////////////////
-//fastclick.js initializer.			   	   //
-//This removes delay for mobile button tap//
-///////////////////////////////////////////
-
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
@@ -25,11 +20,6 @@ function refreshPage() {
   location.reload();
 }
 
-/////////////////////////////////////////////////////////////////////
-//This happens initially when player is waiting for someone to join//
-/////////////////////////////////////////////////////////////////////
-
-//This rotates the spinny symbol
 degreeRotation = 0;
 function spinObject() {
   if (document.getElementsByClassName("waitSpinner").length > 0) {
@@ -43,10 +33,6 @@ function spinObject() {
 
 loop = setInterval(spinObject, 1000 / 60);
 
-///////////////////////////////////////////
-//These functions create various elements//
-///////////////////////////////////////////
-//This sandwiches text with the spinners
 function sandwichWithSpinners(elementId, sandwichText) {
   var waitSpinner1 = document.createElement("i");
   var waitSpinner2 = document.createElement("i");
@@ -65,7 +51,6 @@ function sandwichWithSpinners(elementId, sandwichText) {
   loop = setInterval(spinObject, 1000 / 60);
 }
 
-//Creates a rematch button
 function createRematchButton() {
   var rematchBtn = document.createElement("button");
 
@@ -79,7 +64,6 @@ function createRematchButton() {
   document.getElementById("gameState").appendChild(rematchBtn);
 }
 
-//This is the button that is made when opponent leaves to find a new game
 function createFindGameButton() {
   var findGame = document.createElement("button");
   findGame.setAttribute("class", "actionBtn btn btn-info");
@@ -92,12 +76,7 @@ function createFindGameButton() {
 
   document.getElementById("gameState").appendChild(findGame);
 }
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////
-//These functions deal with reseting the game board when a new game starts//
-////////////////////////////////////////////////////////////////////////////
 function resetBoxes() {
   for (var i = 1; i < 10; i++) {
     document.getElementById(i.toString()).innerHTML = "";
@@ -109,10 +88,7 @@ function resetScoreboard() {
   document.getElementById("tieScore").innerHTML = "0";
   document.getElementById("OScore").innerHTML = "0";
 }
-////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
 
-//This function returns text based on if it is your turn
 function checkTurn() {
   var turnText;
   if (yourTurn) {
@@ -127,11 +103,7 @@ function checkTurn() {
   }
 }
 
-//////////////////////////////////////////////////////
-//These functions deal with start of the game things//
-//////////////////////////////////////////////////////
 socket.on("connect", function () {
-  //Resets boxes to make sure none are already there when page loads
   resetBoxes();
   resetScoreboard();
 });
@@ -157,10 +129,8 @@ function removeSearchScreen() {
 }
 
 function gameStart() {
-  //Stops spinning the spinny things because they go away
   clearInterval(loop);
 
-  //This checks if the search screen is there before trying to remove it
   if (document.getElementById("loading")) {
     removeSearchScreen();
   }
@@ -183,11 +153,7 @@ socket.on("gameStart", function () {
   gameStart();
 });
 
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-
 function playerDisconnected(text) {
-  //This clears any spinners if they are running
   clearInterval(loop);
 
   document.getElementById("gameState").innerHTML = text;
@@ -397,6 +363,3 @@ function boxClick(box) {
     }
   }
 }
-// socket.on("mydata", (a) => {
-//   console.log(a);
-// });
