@@ -181,7 +181,7 @@ io.on("connection", function (socket) {
       letter: randomGame.letters[randomGame.usersOn - 1],
       turn: randomGame.turn[randomGame.usersOn - 1],
       roomType: "random",
-      nama: namaPemain,
+      nama: namaPemain || `player ${randomGame.usersOn}`,
     };
 
     randomGame.playerData.push(joinInfo);
@@ -207,7 +207,7 @@ io.on("connection", function (socket) {
       turn: privateGame.turn[privateGame.usersOn - 1],
       roomType: "private",
       gameValues: privateGame,
-      nama: namaPemain,
+      nama: namaPemain || `player ${privateGame.usersOn}`,
     };
     socket.emit("playersJoined", joinInfo);
 
@@ -229,7 +229,7 @@ io.on("connection", function (socket) {
         letter: gameValues.letters[gameValues.usersOn - 1],
         turn: gameValues.turn[gameValues.usersOn - 1],
         roomType: "private",
-        nama: namaPemain,
+        nama: namaPemain || `player ${gameValues.usersOn}`,
       };
 
       if (papan[gameRoomId].length <= 1) {
